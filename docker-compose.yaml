@@ -2,7 +2,7 @@ version: "3"
 
 services:
   web:
-    image: webdevops/php-apache:alpine-php7
+    image: webdevops/php-apache:8.2-alpine
     ports:
       - "4500:80"
     volumes:
@@ -13,7 +13,7 @@ services:
     command: ['--default-authentication-plugin=mysql_native_password','--character-set-server=utf8mb4', '--collation-server=utf8mb4_general_ci']
     restart: always
     environment:
-      MYSQL_DATABASE: devbuild
+      MYSQL_DATABASE: database
       MYSQL_ROOT_PASSWORD: root
         
   phpmyadmin:
